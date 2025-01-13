@@ -2,7 +2,7 @@ package org.skypro;
 
 public class App {
     public static void main(String[] args) {
-        HELP app = new HELP();
+        ProductBasket app = new ProductBasket();
         app.addProduct("Мед", 300);
         app.addProduct("чипсы", 95);
         app.printAllname();

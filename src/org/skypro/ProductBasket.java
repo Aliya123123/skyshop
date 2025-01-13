@@ -1,42 +1,42 @@
 package org.skypro;
 
- class HELP {
-    private final Product[] Products;
+ class ProductBasket {
+    private final Product[] products;
     int size;
 
-     public HELP() {
-        this.Products = new Product[5];
+     public ProductBasket() {
+        this.products = new Product[5];
     }
 
     public void addProduct(String name, int price) {
-        if (size > Products.length) {
-            System.out.println("Невозможно добавить продукт");
-        }
-        Product newProduct = new Product(name, price);
-        Products[size++] = newProduct;
-    }
+        if (size < products.length){
+            Product newProduct = new Product(name, price);
+            products[size++] = newProduct;}
+        else {
+            System.out.println("Невозможно добавить продукт");}}
+
 
     public void printAllname() {
         for (int i = 0; i < size; i++) {
-            Product product = Products[i];
+            Product product = products[i];
             System.out.println(product.getName());
         }}
 
         public void printAllPrice() {
             for (int i = 0; i < size; i++) {
-                Product product = Products[i];
+                Product product = products[i];
                 System.out.println(product.getPrice());
     }}
      public void printAllSumma() {
          for (int i = 0; i < size; i++) {
-             Product product = Products[i];
+             Product product = products[i];
              System.out.println(product.getName() + " : "+ product.getPrice());
          }
 
          int summa = 0;
          int i = 0;
          do{ for (i = 0; i < size; i++) {
-            Product productX = Products[i];
+            Product productX = products[i];
             summa = summa + productX.getPrice();}}
             while (i > size);
             System.out.println("Итого: " + summa);
@@ -44,7 +44,7 @@ package org.skypro;
      boolean findName(String name) {
          Product product = null;
          for (int i = 0; i < size; i++) {
-             product = Products[i];
+             product = products[i];
              if (name.equals(product.getName())) {
                  return true;
              } else {
@@ -54,7 +54,7 @@ package org.skypro;
          return false;
      }
      public void cleaning() {
-         for (int i = 0; i < Products.length; i++) {
-             Products[i] = null;
-         System.out.println(Products[i]);}
+         for (int i = 0; i < products.length; i++) {
+             products[i] = null;
+         System.out.println(products[i]);}
  }}
