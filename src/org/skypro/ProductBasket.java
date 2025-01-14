@@ -9,11 +9,12 @@ package org.skypro;
     }
 
     public void addProduct(String name, int price) {
-        if (size < products.length){
-            Product newProduct = new Product(name, price);
-            products[size++] = newProduct;}
+        if (size > 5 ) {
+            System.out.println("Невозможно добавить продукт");
+        }
         else {
-            System.out.println("Невозможно добавить продукт");}}
+            Product newProduct = new Product(name, price);
+            products[size++] = newProduct;}}
 
 
     public void printAllname() {
@@ -32,14 +33,13 @@ package org.skypro;
              Product product = products[i];
              System.out.println(product.getName() + " : "+ product.getPrice());
          }
-
          int summa = 0;
          int i = 0;
-         do{ for (i = 0; i < size; i++) {
-            Product productX = products[i];
-            summa = summa + productX.getPrice();}}
-            while (i > size);
-            System.out.println("Итого: " + summa);
+         for (i = 0; i < size; i++) {
+             summa += products[i].getPrice();
+         }
+         System.out.println("Итого: " + summa);
+         return;
      }
      boolean findName(String name) {
          Product product = null;
